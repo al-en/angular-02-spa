@@ -1,7 +1,8 @@
 <h1>Heroes <small>Marvel y DC</small></h1>
 <div class="card-columns">
-  <div class="card animated fadeIn fast" *ngFor="let heroe of heroes; let i = index">
-    <!--<img class="card-img-top" src="{{heroe.img}}" alt="Card image cap"> otra forma de mostrar el valor-->
+
+  <!-- <div class="card animated fadeIn fast" *ngFor="let heroe of heroes; let i = index">
+    <--<img class="card-img-top" src="{{heroe.img}}" alt="Card image cap"> otra forma de mostrar el valor->
     <img class="card-img-top" [src]="heroe.img" [alt]="heroe.nombre">
     <div class="card-body">
       <h5 class="card-title">{{heroe.nombre}}</h5>
@@ -11,8 +12,18 @@
         class="btn btn-outline-primary btn-block">
         Ver mas...
       </button>
-      <!-- Se usa el "/" antes de "heroe" porque hace referencia a una ruta de la forma "heroes/heroe" -->
-      <!-- <a [routerLink]="['/heroe',i]" class="btn btn-outline-primary">Ver mas link...</a> -->
+      <-- Se usa el "/" antes de "heroe" porque hace referencia a una ruta de la forma "heroes/heroe" ->
+      <-- <a [routerLink]="['/heroe',i]" class="btn btn-outline-primary">Ver mas link...</a> ->
     </div>
-  </div>
+  </div> -->
+
+  <!-- Las propiedades heroe e index seran recibidas en el componente hijo (los que fueron declarados con el 
+  decorador @Input
+  Para obtener el valor enviado con output se agrega lo siguiente
+  (heroeSeleccionado)="verHeroe($event)"  
+  -->
+  <app-heroe-tarjeta 
+    [heroe]="foo" 
+    [index]="foo.idx" 
+    *ngFor="let foo of heroes"></app-heroe-tarjeta>
 </div>

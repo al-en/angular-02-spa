@@ -8,8 +8,8 @@
   </div>
 </div>
 <div class="card-columns">
-  <div class="card animated fadeIn fast" *ngFor="let heroe of heroes; let i = index">
-    <!--<img class="card-img-top" src="{{heroe.img}}" alt="Card image cap"> otra forma de mostrar el valor-->
+  <!-- <div class="card animated fadeIn fast" *ngFor="let heroe of heroes; let i = index">
+    !--<img class="card-img-top" src="{{heroe.img}}" alt="Card image cap"> otra forma de mostrar el valor
     <img class="card-img-top" [src]="heroe.img" [alt]="heroe.nombre">
     <div class="card-body">
       <h5 class="card-title">{{heroe.nombre}}</h5>
@@ -19,8 +19,14 @@
         class="btn btn-outline-primary btn-block">
         Ver mas...
       </button>
-      <!-- Se usa el "/" antes de "heroe" porque hace referencia a una ruta de la forma "heroes/heroe" -->
-      <!-- <a [routerLink]="['/heroe',i]" class="btn btn-outline-primary">Ver mas link...</a> -->
-    </div>
-  </div>
+      !-- Se usa el "/" antes de "heroe" porque hace referencia a una ruta de la forma "heroes/heroe" --
+      !-- <a [routerLink]="['/heroe',i]" class="btn btn-outline-primary">Ver mas link...</a> --
+    </div> 
+  </div>-->
+    <app-heroe-tarjeta 
+      [heroe]="h" 
+      [index]="h.idx" 
+      *ngFor="let h of heroes">
+    </app-heroe-tarjeta>
+  
 </div>
